@@ -19,12 +19,12 @@ public class RedisproxyApplication {
 	//Cache manager for Redis
 	@Bean
 	public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
-	  RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig() //
+	  	RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig() //
 		  .prefixCacheNameWith(this.getClass().getPackageName() + ".") //
-		  .entryTtl(Duration.ofHours(1)) //
+		  .entryTtl(Duration.ofMinutes(3)) //
 		  .disableCachingNullValues();
-  
-	  return RedisCacheManager.builder(connectionFactory) //
+		
+		return RedisCacheManager.builder(connectionFactory) //
 		  .cacheDefaults(config) //
 		  .build();
 	}

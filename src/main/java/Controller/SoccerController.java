@@ -4,6 +4,9 @@ import java.util.AbstractMap.SimpleEntry;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +26,7 @@ public class SoccerController {
     private RedisTemplate<String, SoccerPlayer> proxy;
 
     @GetMapping("/player/{key}")
+    @Cacheable
     public Map.Entry<String, SoccerPlayer> getSoccerPlayer(@PathVariable("key") String key){
         SoccerPlayer value =  (SoccerPlayer) proxy.opsForValue().get(key);
 
