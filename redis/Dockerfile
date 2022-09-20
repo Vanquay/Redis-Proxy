@@ -1,3 +1,3 @@
 FROM redis
 COPY redis.conf ./
-CMD 
+CMD redis-server /redis/redis.conf
