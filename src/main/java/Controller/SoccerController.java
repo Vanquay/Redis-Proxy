@@ -26,7 +26,7 @@ public class SoccerController {
     private RedisTemplate<String, SoccerPlayer> proxy;
 
     @GetMapping("/player/{key}")
-    @Cacheable
+    @Cacheable("Soccer-Player")
     public Map.Entry<String, SoccerPlayer> getSoccerPlayer(@PathVariable("key") String key){
         SoccerPlayer value =  (SoccerPlayer) proxy.opsForValue().get(key);
 

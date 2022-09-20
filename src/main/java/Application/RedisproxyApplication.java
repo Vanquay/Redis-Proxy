@@ -16,7 +16,7 @@ import Models.SoccerPlayer;
 @SpringBootApplication
 @EnableCaching
 public class RedisproxyApplication {
-	//Cache manager for Redis
+	//Cache manager for Redis with TTL config
 	@Bean
 	public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
 	  	RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig() //
