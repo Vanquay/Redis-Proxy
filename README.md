@@ -2,7 +2,7 @@
 This repo simulates a database for a soccer team and helps retrive Soccer players information. The user hits an API that checks a redis cache before going to an imaginary MYSQL database or returning the result from the stored cache results.
 
 ## Architecture Overview
-![Architecture](images/Architecture.jpg)
+![Architecture](images/Architecture.jpeg)
 A HTTP API calls on Redis Cache using REST Controllers. 
 ## Algorithmic complexity of Cache
 All get, put and evict operations from Redis use a O(1+n/k) Time compplexity where `n = number of items` and `k = number of buckets`
