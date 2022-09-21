@@ -15,13 +15,18 @@ make test
 ```
 ## Requirements not implemented
 Parallel Concurrent Processing - Allocated Time ran out.
+
 Redis Client Protocol - Need more time to research it.
+
 System Tests: Ran it using Postman, Allocated Time ran out.
 
 ## Time Spent
 HTTP web service : 15mins
+
 Redis Backing Instance and configuration: Spent 6hrs reading documentation on REDIS, SPRING caching and implementing it.
+
 System Tests : 
+
 Single-Click build and test: 1hr
 
 
