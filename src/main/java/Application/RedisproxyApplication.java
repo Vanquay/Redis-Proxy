@@ -11,8 +11,6 @@ import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import Models.SoccerPlayer;
-
 @SpringBootApplication
 @EnableCaching
 public class RedisproxyApplication {
@@ -21,7 +19,7 @@ public class RedisproxyApplication {
 	public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
 	  	RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig() //
 		  .prefixCacheNameWith(this.getClass().getPackageName() + ".") //
-		  .entryTtl(Duration.ofMinutes(3)) //
+		  .entryTtl(Duration.ofSeconds(7)) //
 		  .disableCachingNullValues();
 		
 		return RedisCacheManager.builder(connectionFactory) //
